@@ -14,22 +14,22 @@ class TicketView extends StatelessWidget {
     final size = AppLayout.getSize(context);
     return SizedBox(
       width: size.width * 0.85,
-      height: 200.0,
+      height: AppLayout.getHeight(200.0),
       child: Container(
-        margin: const EdgeInsets.only(right: 16.0),
+        margin: EdgeInsets.only(right: AppLayout.getHeight(16.0)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             // Showing the blue part if the ticket
             Container(
-              decoration: const BoxDecoration(
-                color: Color(0xFF526799),
+              decoration: BoxDecoration(
+                color: const Color(0xFF526799),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(21.0),
-                  topRight: Radius.circular(21.0),
+                  topLeft: Radius.circular(AppLayout.getHeight(21.0)),
+                  topRight: Radius.circular(AppLayout.getHeight(21.0)),
                 ),
               ),
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(AppLayout.getHeight(16.0)),
               child: Column(
                 children: [
                   Row(
@@ -47,7 +47,7 @@ class TicketView extends StatelessWidget {
                           // Widget over lapping
                           children: [
                             SizedBox(
-                              height: 24.0,
+                              height: AppLayout.getHeight(24.0),
                               child: LayoutBuilder(
                                 builder: (BuildContext context, BoxConstraints constraints) {
                                   print("The width is ${constraints.constrainWidth()}");
@@ -78,7 +78,6 @@ class TicketView extends StatelessWidget {
                           ],
                         ),
                       ), // const Spacer(),
-
                       const ThickContainer(),
                       Expanded(child: Container()), // const Spacer(),
                       Text(
@@ -89,12 +88,12 @@ class TicketView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Gap(3),
+                  Gap(AppLayout.getHeight(3.0)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(
-                        width: 100.0,
+                        width: AppLayout.getWidth(100.0),
                         child: Text(
                           "${ticket['from']['name']}",
                           style: Styles.headLineStyle4.copyWith(color: Colors.white),
@@ -105,7 +104,7 @@ class TicketView extends StatelessWidget {
                         style: Styles.headLineStyle4.copyWith(color: Colors.white),
                       ),
                       SizedBox(
-                        width: 100.0,
+                        width: AppLayout.getWidth(100.0),
                         child: Text(
                           "${ticket['to']['name']}",
                           textAlign: TextAlign.end,
@@ -122,22 +121,22 @@ class TicketView extends StatelessWidget {
               color: Styles.orangeColor,
               child: Row(
                 children: [
-                  const SizedBox(
-                    height: 20.0,
-                    width: 10.0,
+                  SizedBox(
+                    height: AppLayout.getHeight(20.0),
+                    width: AppLayout.getWidth(10.0),
                     child: DecoratedBox(
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
+                          topRight: Radius.circular(AppLayout.getHeight(10.0)),
+                          bottomRight: Radius.circular(AppLayout.getHeight(10.0)),
                         ),
                       ),
                     ),
                   ),
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(AppLayout.getHeight(12.0)),
                       child: LayoutBuilder(
                         builder: (BuildContext context, BoxConstraints constraints) {
                           return Flex(
@@ -159,15 +158,15 @@ class TicketView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20.0,
-                    width: 10.0,
+                  SizedBox(
+                    height: AppLayout.getHeight(20.0),
+                    width: AppLayout.getWidth(10.0),
                     child: DecoratedBox(
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10.0),
-                          bottomLeft: Radius.circular(10.0),
+                          topLeft: Radius.circular(AppLayout.getHeight(10.0)),
+                          bottomLeft: Radius.circular(AppLayout.getHeight(10.0)),
                         ),
                       ),
                     ),
@@ -179,12 +178,12 @@ class TicketView extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 color: Styles.orangeColor,
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(21.0),
-                  bottomRight: Radius.circular(21.0),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(AppLayout.getHeight(21.0)),
+                  bottomRight: Radius.circular(AppLayout.getHeight(21.0)),
                 ),
               ),
-              padding: const EdgeInsets.only(left: 16.0, top: 10.0, right: 16.0, bottom: 16.0),
+              padding: EdgeInsets.only(left: AppLayout.getHeight(16.0), top: AppLayout.getHeight(10.0), right: AppLayout.getHeight(16.0), bottom: AppLayout.getHeight(16.0)),
               child: Column(
                 children: [
                   Row(
@@ -197,7 +196,7 @@ class TicketView extends StatelessWidget {
                             "${ticket['date']}",
                             style: Styles.headLineStyle3.copyWith(color: Colors.white),
                           ),
-                          const Gap(5),
+                          Gap(AppLayout.getHeight(5.0)),
                           Text(
                             "Date",
                             style: Styles.headLineStyle4.copyWith(color: Colors.white),
@@ -211,7 +210,7 @@ class TicketView extends StatelessWidget {
                             "${ticket['departure_time']}",
                             style: Styles.headLineStyle3.copyWith(color: Colors.white),
                           ),
-                          const Gap(5),
+                          Gap(AppLayout.getHeight(5.0)),
                           Text(
                             "Departure time",
                             style: Styles.headLineStyle4.copyWith(color: Colors.white),
@@ -225,7 +224,7 @@ class TicketView extends StatelessWidget {
                             "${ticket['number']}",
                             style: Styles.headLineStyle3.copyWith(color: Colors.white),
                           ),
-                          const Gap(5),
+                          Gap(AppLayout.getHeight(5.0)),
                           Text(
                             "Number",
                             style: Styles.headLineStyle4.copyWith(color: Colors.white),
