@@ -1,4 +1,5 @@
 import 'package:booking/screens/home_screen.dart';
+import 'package:booking/screens/search_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -14,15 +15,14 @@ class _BottomBarState extends State<BottomBar> {
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
     // const Text("Home"),
-    const Text("Search"),
+    const SearchScreen(),
+    // const Text("Search"),
     const Text("Tickets"),
     const Text("Profile"),
   ];
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    setState(() => _selectedIndex = index);
   }
 
   @override

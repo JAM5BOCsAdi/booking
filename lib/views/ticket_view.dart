@@ -1,6 +1,6 @@
 import 'package:booking/utils/app_layout.dart';
 import 'package:booking/utils/app_styles.dart';
-import 'package:booking/widgets/thick_container.dart';
+import 'package:booking/widgets/thick_container_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
