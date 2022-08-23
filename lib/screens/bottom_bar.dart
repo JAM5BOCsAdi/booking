@@ -1,5 +1,6 @@
 import 'package:booking/screens/home_screen.dart';
 import 'package:booking/screens/search_screen.dart';
+import 'package:booking/screens/ticket_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,8 @@ class _BottomBarState extends State<BottomBar> {
     // const Text("Home"),
     const SearchScreen(),
     // const Text("Search"),
-    const Text("Tickets"),
+    const TicketScreen(),
+    // const Text("Tickets"),
     const Text("Profile"),
   ];
 

@@ -6,8 +6,16 @@ import 'package:gap/gap.dart';
 
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticket;
+  final bool? isColor;
+  const TicketView({Key? key, required this.ticket, this.isColor}) : super(key: key);
 
-  const TicketView({Key? key, required this.ticket}) : super(key: key);
+  bool? _isNull() {
+    if (isColor == null) {
+      return null;
+    } else {
+      return true;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +31,7 @@ class TicketView extends StatelessWidget {
             // Showing the blue part if the ticket
             Container(
               decoration: BoxDecoration(
-                color: const Color(0xFF526799),
+                color: isColor == null ? const Color(0xFF526799) : Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(AppLayout.getHeight(21.0)),
                   topRight: Radius.circular(AppLayout.getHeight(21.0)),
@@ -36,12 +44,10 @@ class TicketView extends StatelessWidget {
                     children: [
                       Text(
                         "${ticket['from']['code']}",
-                        style: Styles.headLineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
+                        style: isColor == null ? Styles.headLineStyle3.copyWith(color: Colors.white) : Styles.headLineStyle3,
                       ),
                       Expanded(child: Container()), // const Spacer(),
-                      const ThickContainer(),
+                      ThickContainer(isColor: _isNull()),
                       Expanded(
                         child: Stack(
                           // Widget over lapping
@@ -78,7 +84,7 @@ class TicketView extends StatelessWidget {
                           ],
                         ),
                       ), // const Spacer(),
-                      const ThickContainer(),
+                      ThickContainer(isColor: _isNull()),
                       Expanded(child: Container()), // const Spacer(),
                       Text(
                         "${ticket['to']['code']}",
