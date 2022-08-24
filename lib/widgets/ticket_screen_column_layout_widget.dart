@@ -6,12 +6,13 @@ import 'package:gap/gap.dart';
 class AppColumnLayout extends StatelessWidget {
   final String firstText;
   final String secondText;
-  const AppColumnLayout({Key? key, required this.firstText, required this.secondText}) : super(key: key);
+  final CrossAxisAlignment alignment;
+  const AppColumnLayout({Key? key, required this.firstText, required this.secondText, required this.alignment}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: alignment,
       children: [
         Text(firstText, style: Styles.headLineStyle3),
         Gap(AppLayout.getHeight(5.0)),

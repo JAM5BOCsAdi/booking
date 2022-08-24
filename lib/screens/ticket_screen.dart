@@ -34,13 +34,15 @@ class TicketScreen extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(16.0)),
-                padding: EdgeInsets.only(left: AppLayout.getHeight(16.0)),
+                padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(16.0)),
                 color: Colors.white,
                 child: Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        AppColumnLayout(firstText: "Flutter DB", secondText: "Passenger"),
+                        AppColumnLayout(firstText: "Flutter DB", secondText: "Passenger", alignment: CrossAxisAlignment.start),
+                        AppColumnLayout(firstText: "5221 364869", secondText: "Passport", alignment: CrossAxisAlignment.end),
                       ],
                     ),
                   ],
