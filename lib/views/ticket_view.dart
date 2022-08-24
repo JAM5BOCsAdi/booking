@@ -1,5 +1,6 @@
 import 'package:booking/utils/app_layout.dart';
 import 'package:booking/utils/app_styles.dart';
+import 'package:booking/widgets/layout_builder_widget.dart';
 import 'package:booking/widgets/thick_container_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -139,25 +140,7 @@ class TicketView extends StatelessWidget {
                   Expanded(
                     child: Padding(
                       padding: EdgeInsets.all(AppLayout.getHeight(12.0)),
-                      child: LayoutBuilder(
-                        builder: (BuildContext context, BoxConstraints constraints) {
-                          return Flex(
-                            direction: Axis.horizontal,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            mainAxisSize: MainAxisSize.max,
-                            children: List.generate(
-                              (constraints.constrainWidth() / 15).floor(),
-                              (index) => SizedBox(
-                                width: 5.0,
-                                height: 1.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: isColor == null ? Colors.white : Colors.grey.shade300),
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      ),
+                      child: const AppLayoutBuilderWidget(sections: 15, isColor: true),
                     ),
                   ),
                   SizedBox(

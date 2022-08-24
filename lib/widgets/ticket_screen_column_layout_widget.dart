@@ -16,7 +16,7 @@ class AppColumnLayout extends StatelessWidget {
       children: [
         Text(firstText, style: Styles.headLineStyle3),
         Gap(AppLayout.getHeight(5.0)),
-        Text(secondText, style: Styles.headLineStyle3),
+        Text(secondText, style: Styles.headLineStyle4),
       ],
     );
   }
