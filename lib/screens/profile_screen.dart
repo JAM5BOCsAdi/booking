@@ -88,6 +88,7 @@ class ProfileScreen extends StatelessWidget {
               )
             ],
           ),
+          Gap(AppLayout.getHeight(40.0)),
         ],
       ),
     );
