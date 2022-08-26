@@ -108,6 +108,36 @@ class TicketScreen extends StatelessWidget {
               ),
             ],
           ),
+          Positioned(
+            left: AppLayout.getWidth(19.0),
+            top: AppLayout.getWidth(285.0),
+            child: Container(
+              padding: EdgeInsets.all(AppLayout.getHeight(3.0)),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: Styles.textColor, width: AppLayout.getHeight(2.0)),
+              ),
+              child: CircleAvatar(
+                maxRadius: AppLayout.getHeight(4.0),
+                backgroundColor: Styles.textColor,
+              ),
+            ),
+          ),
+          Positioned(
+            right: AppLayout.getWidth(19.0),
+            top: AppLayout.getWidth(285.0),
+            child: Container(
+              padding: EdgeInsets.all(AppLayout.getHeight(3.0)),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: Styles.textColor, width: AppLayout.getHeight(2.0)),
+              ),
+              child: CircleAvatar(
+                maxRadius: AppLayout.getHeight(4.0),
+                backgroundColor: Styles.textColor,
+              ),
+            ),
+          ),
         ],
       ),
     );
